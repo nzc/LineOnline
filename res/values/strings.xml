@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LineOnline</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lineMenuButtonText">[排队]</string>
+	<string name="mapMenuButtonText">[地图]</string>
+	<string name="commMenuButtonText">[评价]</string>
+	<string name="shareMenuButtonText">[圈子]</string>
+</resources>
