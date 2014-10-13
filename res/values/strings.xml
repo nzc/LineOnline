@@ -4,8 +4,15 @@
     <string name="app_name">LineOnline</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
     <string name="lineMenuButtonText">[排队]</string>
 	<string name="mapMenuButtonText">[地图]</string>
 	<string name="commMenuButtonText">[评价]</string>
 	<string name="shareMenuButtonText">[圈子]</string>
+	
+	<string name="mainPageBackground">#ffe699</string>
+	<string name="selectedTabBackground">#ffe699</string>
+	<string name="selectedTabTextColor">#969696</string>
+	<string name="unselectedTabBackground">#969696</string>
+	<string name="unselectedTabTextColor">#ebebeb</string>
 </resources>

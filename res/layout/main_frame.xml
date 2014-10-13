@@ -3,69 +3,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.playfun.lineonline.MainFrame" >
-    <TextView
+
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabNavigator" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="50sp"
-        android:text="Hello Line!" />
-	<LinearLayout
-	    android:layout_alignParentBottom="true"
-	    android:orientation="horizontal"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content">
-	    
-	    <TextView
-	        android:id="@+id/lineMenuButton"
-	        android:layout_width="wrap_content"
-	        android:padding="0dp"
-	        android:layout_margin="0dp"
-	        android:textSize="20sp"
-	        android:layout_height="50dp"
-	        android:layout_weight="1"
-	        android:background="#999999"
-	        android:gravity="center"
-	        android:text="@string/lineMenuButtonText"
-	        android:textColor="#ffffff" />
-	    
-	    <TextView
-	        android:id="@+id/mapMenuButton"
-	        android:layout_width="wrap_content"
-	        android:padding="0dp"
-	        android:layout_margin="0dp"
-	        android:textSize="20sp"
-	        android:layout_height="50dp"
-	        android:layout_weight="1"
-	        android:background="#999999"
-	        android:gravity="center"
-	        android:text="@string/mapMenuButtonText"
-	        android:textColor="#ffffff" />
-	    
-	    <TextView
-	        android:id="@+id/commMenuButton"
-	        android:layout_width="wrap_content"
-	        android:padding="0dp"
-	        android:layout_margin="0dp"
-	        android:textSize="20sp"
-	        android:layout_height="50dp"
-	        android:layout_weight="1"
-	        android:background="#999999"
-	        android:gravity="center"
-	        android:text="@string/commMenuButtonText"
-	        android:textColor="#ffffff" />
-	    
-	    <TextView
-	        android:id="@+id/shareMenuButton"
-	        android:layout_width="wrap_content"
-	        android:padding="0dp"
-	        android:layout_margin="0dp"
-	        android:textSize="20sp"
-	        android:layout_height="50dp"
-	        android:layout_weight="1"
-	        android:background="#999999"
-	        android:gravity="center"
-	        android:text="@string/shareMenuButtonText"
-	        android:textColor="#ffffff" />
-	    
-	</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/tabNavigator">
+
+        <TextView
+            android:id="@+id/lineMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="#999999"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/lineMenuButtonText"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/mapMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="#999999"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/mapMenuButtonText"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/commMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="#999999"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/commMenuButtonText"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/shareMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="#999999"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/shareMenuButtonText"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </RelativeLayout>
