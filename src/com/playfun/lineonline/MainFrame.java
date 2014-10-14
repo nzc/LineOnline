@@ -7,6 +7,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -19,8 +22,6 @@ public class MainFrame extends FragmentActivity implements OnClickListener {
     private List<TextView> tabNavigators = new ArrayList<TextView>();
     
     private int currentPosition = 0;
-    
-    private String[] tabs = new String[4];
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class MainFrame extends FragmentActivity implements OnClickListener {
 	    }
 	    
 	    viewPager.setAdapter(mAdapter);
-	    
 	    viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 	    	public void onPageSelected(int position) {
 	        // on changing the page
@@ -54,6 +54,25 @@ public class MainFrame extends FragmentActivity implements OnClickListener {
 	    });
 	    
 	    setSelected(0);
+	}
+	
+	public boolean onCreateOptionMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main_frame, menu);
+		return true;
+	}
+	
+	
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int item_id = item.getItemId();
+		
+		switch (item_id) {
+		case R.id.exit:
+			MainFrame.this.finish();
+			return true;
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 	
 	protected void setSelected(int position) {

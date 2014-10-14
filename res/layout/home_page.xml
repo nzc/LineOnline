@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.playfun.lineonline.HomePage" >
+
+    <TextView
+        android:id="@+id/testMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#888888"
+        android:textColor="#ffffff"
+        android:text="Hello! The home page hasn't been designed yet, clicking any button below will send you to the next activity." />
+	 <LinearLayout
+        android:layout_below="@id/testMainText"
+        android:layout_above="@+id/homeToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="长隆欢乐世界"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="迪士尼乐园" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="国家体育场"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="广州塔"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:id="@+id/homeToolBar"
+        android:layout_alignParentBottom="true">
+        
+        <Button
+            android:id="@+id/twoDScanMenuItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/twoDScanMenuItemText"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#969696"
+            android:textColor="#fefefe" />
+        
+        <Button
+            android:id="@+id/groundSearchMenuItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/groundSearchMenuItemText"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#969696"
+            android:textColor="#fefefe" />
+        
+    </LinearLayout>
+    
+    
+</RelativeLayout>
