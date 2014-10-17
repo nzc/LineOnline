@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
  
 public class CommentFragment extends Fragment {
@@ -25,6 +24,7 @@ public class CommentFragment extends Fragment {
         	TextView textView = new TextView(getActivity());
         	textView.setText("Text " + mIndex);
         	textView.setWidth(LayoutParams.MATCH_PARENT);
+        	
         	textView.setHeight(100);
         	textView.setTextColor(Color.BLACK);
         	textView.setBackgroundResource(R.drawable.textborders);

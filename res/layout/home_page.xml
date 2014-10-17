@@ -4,15 +4,38 @@
     android:layout_height="wrap_content"
     tools:context="com.playfun.lineonline.HomePage" >
 
-    <TextView
-        android:id="@+id/testMainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#888888"
-        android:textColor="#ffffff"
-        android:text="Hello! The home page hasn't been designed yet, clicking any button below will send you to the next activity." />
-	 <LinearLayout
-        android:layout_below="@id/testMainText"
+    <LinearLayout
+        android:id="@+id/homePageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="@string/app_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+            
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <EditText
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+                
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+    
+	<LinearLayout
+        android:layout_below="@id/homePageHeader"
         android:layout_above="@+id/homeToolBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
