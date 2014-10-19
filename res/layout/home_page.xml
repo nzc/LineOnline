@@ -11,25 +11,36 @@
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:background="#f69b30">
             <TextView
                 android:text="@string/app_name"
+                android:textSize="23sp"
+                android:textColor="#464b51"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center" />
             
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true" />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/twod_scan_icon"/>
         </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:padding="5dp">
             <EditText
+                android:id="@+id/playgroundSearch"
+                android:background="@drawable/edittext_with_round_corner"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent">
-                
+                android:layout_width="match_parent"
+                android:hint="@string/playgroundIDInputHint"
+                android:textSize="13sp"
+                android:drawablePadding="10dp"
+                android:singleLine="true">
             </EditText>
         </LinearLayout>
     </LinearLayout>

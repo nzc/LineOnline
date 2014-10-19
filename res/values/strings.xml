@@ -17,5 +17,6 @@
     <string name="title_activity_home_page">HomePage</string>
     <string name="twoDScanMenuItemText">扫一扫</string>
     <string name="groundSearchMenuItemText">游乐场搜索</string>
+    <string name="playgroundIDInputHint">请输入游乐园号</string>
 
 </resources>

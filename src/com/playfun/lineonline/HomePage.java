@@ -4,21 +4,19 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class HomePage extends Activity implements OnClickListener {
 	
-	private ArrayList<TextView> playGroundLink = new ArrayList<TextView>();
 	private ArrayList<Button> navigators = new ArrayList<Button>();
-	
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +28,12 @@ public class HomePage extends Activity implements OnClickListener {
 		
 		for (Button i : navigators)
 			i.setOnClickListener(this);
+		
+		EditText mEditText = (EditText) findViewById(R.id.playgroundSearch);
+		Drawable img = getResources().getDrawable(R.drawable.search);
+		System.out.println(mEditText.getHeight());
+		img.setBounds(0, 0, mEditText.getHeight(), mEditText.getHeight());
+		mEditText.setCompoundDrawables(img, null, null, null);
 		
 		
 	}
