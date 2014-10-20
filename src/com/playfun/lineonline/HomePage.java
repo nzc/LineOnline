@@ -12,7 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.playfun.lineonline.util.Debugger;
 
 public class HomePage extends Activity implements OnClickListener {
 	
@@ -32,9 +33,8 @@ public class HomePage extends Activity implements OnClickListener {
 		EditText mEditText = (EditText) findViewById(R.id.playgroundSearch);
 		Drawable img = getResources().getDrawable(R.drawable.search);
 		System.out.println(mEditText.getHeight());
-		img.setBounds(0, 0, mEditText.getHeight(), mEditText.getHeight());
+		img.setBounds(0, 0, (int)mEditText.getTextSize(), (int)mEditText.getTextSize());
 		mEditText.setCompoundDrawables(img, null, null, null);
-		
 		
 	}
 

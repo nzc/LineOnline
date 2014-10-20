@@ -12,11 +12,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#f69b30">
+            android:background="@color/background_orange">
             <TextView
                 android:text="@string/app_name"
                 android:textSize="23sp"
-                android:textColor="#464b51"
+                android:textColor="@color/text_deep_gray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center" />
@@ -38,7 +38,8 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:hint="@string/playgroundIDInputHint"
-                android:textSize="13sp"
+                android:textSize="15sp"
+                android:paddingLeft="8dp"
                 android:drawablePadding="10dp"
                 android:singleLine="true">
             </EditText>

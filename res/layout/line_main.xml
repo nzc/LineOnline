@@ -5,37 +5,49 @@
     android:orientation="vertical">
     
     <LinearLayout
+        android:id="@+id/lineHeader"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp">
+            android:layout_height="40dp"
+            android:padding="5dp">
             <EditText
+                android:id="@+id/playgroundProjectSearch"
+                android:background="@drawable/edittext_with_round_corner"
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:hint="@string/playgroundProjectInputHint"
+                android:textSize="15sp"
+                android:paddingLeft="8dp"
+                android:drawablePadding="10dp"
+                android:singleLine="true">
             </EditText>
         </LinearLayout>
         <LinearLayout
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:layout_width="match_parent">
-            <RelativeLayout
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Spinner
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1">
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1">
-            </RelativeLayout>
+            </Spinner>
         </LinearLayout>
     </LinearLayout>
      
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lineScrollView">
+        android:padding="5dp"
+        android:id="@+id/lineScrollView"
+        android:layout_below="@id/lineHeader">
         
         <LinearLayout
             android:layout_width="match_parent"
