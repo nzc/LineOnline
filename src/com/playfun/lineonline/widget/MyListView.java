@@ -26,7 +26,7 @@ public class MyListView extends ListView implements OnScrollListener {
 	private final static int REFRESHING = 2;// 正在刷新的状态值
 	private final static int DONE = 3;
 	private final static int LOADING = 4;
-
+	
 	// 实际的padding的距离与界面上偏移距离的比例
 	private final static int RATIO = 3;
 	private LayoutInflater inflater;
@@ -40,6 +40,7 @@ public class MyListView extends ListView implements OnScrollListener {
 
 	// 定义头部下拉刷新的布局的高度
 	private int headerContentHeight;
+	private int headerContentPaddingTop;
 
 	private RotateAnimation animation;
 	private RotateAnimation reverseAnimation;
@@ -68,12 +69,11 @@ public class MyListView extends ListView implements OnScrollListener {
 	private void init(Context context) {
 		setCacheColorHint(context.getResources().getColor(android.R.color.transparent));
 		inflater = LayoutInflater.from(context);
-		headerView = (LinearLayout) inflater.inflate(R.layout.lv_header, null);
+		headerView = (LinearLayout) inflater.inflate(R.layout.lv_header, this, false);
 		lvHeaderTipsTv = (TextView) headerView.findViewById(R.id.lvHeaderTipsTv);
 		lvHeaderLastUpdatedTv = (TextView) headerView.findViewById(R.id.lvHeaderLastUpdatedTv);
 
-		lvHeaderArrowIv = (ImageView) headerView
-				.findViewById(R.id.lvHeaderArrowIv);
+		lvHeaderArrowIv = (ImageView) headerView.findViewById(R.id.lvHeaderArrowIv);
 		// 设置下拉刷新图标的最小高度和宽度
 		lvHeaderArrowIv.setMinimumWidth(70);
 		lvHeaderArrowIv.setMinimumHeight(50);
@@ -82,24 +82,25 @@ public class MyListView extends ListView implements OnScrollListener {
 				.findViewById(R.id.lvHeaderProgressBar);
 		measureView(headerView);
 		headerContentHeight = headerView.getMeasuredHeight();
+		headerContentPaddingTop = headerView.getPaddingTop();
 		// 设置内边距，正好距离顶部为一个负的整个布局的高度，正好把头部隐藏
-		headerView.setPadding(0, -1 * headerContentHeight, 0, 0);
+		//headerView.setPadding(0, -1 * headerContentHeight, 0, 0);
 		// 重绘一下
-		headerView.invalidate();
+		//headerView.invalidate();
 		// 将下拉刷新的布局加入ListView的顶部
 		addHeaderView(headerView, null, false);
 		// 设置滚动监听事件
 		setOnScrollListener(this);
 
 		// 设置旋转动画事件
-		animation = new RotateAnimation(0, -180,
+		animation = new RotateAnimation(0, 180,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		animation.setInterpolator(new LinearInterpolator());
 		animation.setDuration(250);
 		animation.setFillAfter(true);
 
-		reverseAnimation = new RotateAnimation(-180, 0,
+		reverseAnimation = new RotateAnimation(180, 0,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		reverseAnimation.setInterpolator(new LinearInterpolator());
@@ -110,6 +111,7 @@ public class MyListView extends ListView implements OnScrollListener {
 		state = DONE;
 		// 是否正在刷新
 		isRefreshable = false;
+		
 	}
 
 	public void onScrollStateChanged(AbsListView view, int scrollState) {}
@@ -177,7 +179,7 @@ public class MyListView extends ListView implements OnScrollListener {
 					if (state == PULL_To_REFRESH) {
 						setSelection(0);
 						// 下拉到可以进入RELEASE_TO_REFRESH的状态
-						if ((tempY - startY) / RATIO >= headerContentHeight) {// 由done或者下拉刷新状态转变到松开刷新
+						if ((tempY - startY) / RATIO >= headerContentHeight - headerContentPaddingTop) {// 由done或者下拉刷新状态转变到松开刷新
 							state = RELEASE_To_REFRESH;
 							isBack = true;
 							changeHeaderViewByState();
@@ -197,14 +199,15 @@ public class MyListView extends ListView implements OnScrollListener {
 					}
 					// 更新headView的size
 					if (state == PULL_To_REFRESH) {
-						headerView.setPadding(0, -1 * headerContentHeight
-								+ (tempY - startY) / RATIO, 0, 0);
-
+			//			headerView.setPadding(0, -1 * headerContentHeight
+			//					+ (tempY - startY) / RATIO, 0, 0);
+						headerView.setPadding(0, headerContentPaddingTop + (tempY - startY) / RATIO, 0, 0);
 					}
 					// 更新headView的paddingTop
 					if (state == RELEASE_To_REFRESH) {
-						headerView.setPadding(0, (tempY - startY) / RATIO
-								- headerContentHeight, 0, 0);
+			//			headerView.setPadding(0, (tempY - startY) / RATIO
+			//					- headerContentHeight, 0, 0);
+						headerView.setPadding(0, headerContentPaddingTop + (tempY - startY) / RATIO, 0, 0);
 					}
 
 				}
@@ -251,7 +254,8 @@ public class MyListView extends ListView implements OnScrollListener {
 
 		case REFRESHING:
 
-			headerView.setPadding(0, 0, 0, 0);
+		//	headerView.setPadding(0, 0, 0, 0);
+			headerView.setPadding(0, headerContentHeight, 0, 0);
 
 			lvHeaderProgressBar.setVisibility(View.VISIBLE);
 			lvHeaderArrowIv.clearAnimation();
@@ -260,7 +264,8 @@ public class MyListView extends ListView implements OnScrollListener {
 			lvHeaderLastUpdatedTv.setVisibility(View.VISIBLE);
 			break;
 		case DONE:
-			headerView.setPadding(0, -1 * headerContentHeight, 0, 0);
+		//	headerView.setPadding(0, -1 * headerContentHeight, 0, 0);
+			headerView.setPadding(0, headerContentPaddingTop, 0, 0);
 
 			lvHeaderProgressBar.setVisibility(View.GONE);
 			lvHeaderArrowIv.clearAnimation();
@@ -293,7 +298,7 @@ public class MyListView extends ListView implements OnScrollListener {
 		child.measure(childWidthSpec, childHeightSpec);
 	}
 
-	public void setonRefreshListener(OnRefreshListener refreshListener) {
+	public void setOnRefreshListener(OnRefreshListener refreshListener) {
 		this.refreshListener = refreshListener;
 		isRefreshable = true;
 	}

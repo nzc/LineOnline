@@ -24,17 +24,18 @@ public class HomePage extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_page);
 		
-		navigators.add((Button) findViewById(R.id.twoDScanMenuItem));
-		navigators.add((Button) findViewById(R.id.groundSearchMenuItem));
-		
 		for (Button i : navigators)
 			i.setOnClickListener(this);
 		
 		EditText mEditText = (EditText) findViewById(R.id.playgroundSearch);
 		Drawable img = getResources().getDrawable(R.drawable.search);
-		System.out.println(mEditText.getHeight());
 		img.setBounds(0, 0, (int)mEditText.getTextSize(), (int)mEditText.getTextSize());
 		mEditText.setCompoundDrawables(img, null, null, null);
+		
+		findViewById(R.id.homePageImageItem1).setOnClickListener(this);
+		findViewById(R.id.homePageImageItem2).setOnClickListener(this);
+		findViewById(R.id.homePageImageItem3).setOnClickListener(this);
+		findViewById(R.id.homePageImageItem4).setOnClickListener(this);
 		
 	}
 

@@ -86,7 +86,7 @@ public class MainTabsAdapter extends FragmentPagerAdapter implements TabHost.OnT
 
 	public void onPageScrollStateChanged(int arg0) {}
 
-	public void onPageScrolled(int arg0, float arg1, int arg2) {}
+	public void onPageScrolled(int arg0, float arg1, int arg2) {return;}
 
 	public void onPageSelected(int position) {
 		TabWidget widget = mTabHost.getTabWidget();

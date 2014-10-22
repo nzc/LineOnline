@@ -9,10 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class LvAdapter extends BaseAdapter {
-	private List<String> list;
+	private List<View> list;
 	private Context context;
-
-	public LvAdapter(List<String> list, Context context) {
+	
+	public LvAdapter(Context context, List<View> list) {
 		this.list = list;
 		this.context = context;
 	}
@@ -30,9 +30,7 @@ public class LvAdapter extends BaseAdapter {
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TextView tv = new TextView(context.getApplicationContext());
-		tv.setText(list.get(position));
-		return tv;
+		return list.get(position);
 	}
 
 }
