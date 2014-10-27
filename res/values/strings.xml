@@ -22,5 +22,23 @@
     <string name="u_slide_board">U型滑板</string>
     <string name="release_to_refresh">松开刷新</string>
     <string name="last_updated_date">最近更新2014-10-20 早上9:07:45</string>
+    
+    <string name="lineFragSpin1Prompt">项目筛选</string>
+    <string-array name="lineFragSpin1Item">
+        <item>全部</item>
+        <item>哈比王国</item>
+        <item>开心乐园</item>
+        <item>尖叫地带</item>
+        <item>旋风岛</item>
+        <item>彩虹湾</item>
+        <item>欢乐水世界</item>
+        <item>乐园餐厅</item>
+    </string-array>
+    <string name="lineFragSpin2Prompt">排序规则</string> 
+    <string-array name="lineFragSpin2Item">
+        <item>等待时间最短</item>
+        <item>距离最近</item>
+        <item>人气最高</item>
+    </string-array>
 
 </resources>

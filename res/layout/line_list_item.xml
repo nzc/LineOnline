@@ -1,63 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:orientation="horizontal" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+	<LinearLayout android:layout_width="match_parent"
+    	android:layout_height="100dp"
+    	android:orientation="horizontal" >
 
-    <ImageView
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="8"
-        android:padding="5dp"
-        android:src="@drawable/u_slide_board" />
-
-    <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
-        android:orientation="vertical"
-        android:padding="5dp" >
-
-    	<TextView
-    	    android:layout_width="match_parent"
-    	    android:layout_height="match_parent"
-    	    android:layout_weight="1"
-    	    android:gravity="bottom"
-    	    android:text="U型滑板"
-    	    android:textColor="@color/text_orange"
-    	    android:textSize="20sp" />
+    	<ImageView
+    	    android:id="@+id/listItemProjectIcon"
+        	android:layout_width="0dip"
+        	android:layout_height="match_parent"
+        	android:layout_weight="8"
+        	android:padding="5dp"
+        	android:src="@drawable/u_slide_board" />
 
     	<LinearLayout
-    	    android:layout_width="match_parent"
-    	    android:layout_height="match_parent"
-    	    android:layout_weight="1"
-    	    android:orientation="horizontal" >
+        	android:layout_width="0dip"
+        	android:layout_height="match_parent"
+        	android:layout_weight="6"
+        	android:orientation="vertical"
+        	android:padding="5dp" >
 
-    	    <TextView
-    	        android:layout_width="match_parent"
-    	        android:layout_height="match_parent"
-    	        android:layout_weight="1"
-    	        android:gravity="bottom"
-    	        android:text="最早可约:"
-    	        android:textColor="@color/text_gray"
-    	        android:textSize="13sp" />
+    		<TextView
+    		    android:id="@+id/listItemProjectName"
+    	    	android:layout_width="match_parent"
+    	    	android:layout_height="match_parent"
+    	    	android:layout_weight="1"
+    	    	android:gravity="bottom"
+    	    	android:text="U型滑板"
+    	    	android:textColor="@color/text_orange"
+    	    	android:textSize="20sp" />
 
-    	    <TextView
-    	        android:layout_width="match_parent"
-    	        android:layout_height="match_parent"
-    	        android:layout_weight="1"
-    	        android:gravity="bottom"
-    	        android:text="XX:XX"
-    	        android:textColor="@color/text_orange"
-    	        android:textSize="13sp" />
+    		<LinearLayout
+    	    	android:layout_width="match_parent"
+    	    	android:layout_height="match_parent"
+    	    	android:layout_weight="1"
+    	    	android:orientation="horizontal" >
 
+    	    	<TextView
+    	        	android:layout_width="match_parent"
+    	        	android:layout_height="match_parent"
+    	        	android:layout_weight="1"
+    	        	android:gravity="bottom"
+    	        	android:text="最早可约:"
+    	        	android:textColor="@color/text_gray"
+    	        	android:textSize="13sp" />
+
+    	    	<TextView
+    	    	    android:id="@+id/listItemClosestTime"
+    	        	android:layout_width="match_parent"
+    	        	android:layout_height="match_parent"
+    	        	android:layout_weight="1"
+    	        	android:gravity="bottom"
+    	        	android:text="XX:XX"
+    	        	android:textColor="@color/text_orange"
+    	        	android:textSize="13sp" />
+
+    		</LinearLayout>
     	</LinearLayout>
-    </LinearLayout>
 
-    <ImageView
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:src="@drawable/arrow_down" />
+    	<ImageView
+    	    android:id="@+id/listItemArrow"
+        	android:layout_width="0dip"
+        	android:layout_height="match_parent"
+        	android:layout_weight="1"
+        	android:src="@drawable/arrow_right" />
 
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/listItemDetailList"
+	    android:orientation="vertical"
+	    android:paddingTop="1dp"
+	    android:paddingBottom="2dp"
+	    android:background="@drawable/line_list_item_bg_with_thick_border"
+	    android:visibility="gone">
+    	
+	    <LinearLayout android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	      	android:orientation="horizontal"
+	      	android:padding="5dp"
+	      	android:background="@drawable/line_list_item_bg_with_thin_border">
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemTimeSeg1"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="xx:xx-xx:xx"
+    		    android:textColor="@color/text_gray"
+    		    android:gravity="center" />
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemSeatLeft1"
+    		    android:paddingLeft="10dp"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="余 x 个空位"
+    		    android:gravity="center_vertical"
+    		    android:textColor="@color/text_gray" />
+    		<Button android:layout_height="match_parent"
+    		    android:id="@+id/listItemBookButton1"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="预约"
+    		    android:textColor="@color/white"
+    		    android:background="@drawable/deep_blue_button_with_round_corner" />
+    	</LinearLayout>  
+    	<LinearLayout android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	      	android:orientation="horizontal"
+	      	android:padding="5dp"
+	      	android:background="@drawable/line_list_item_bg_with_thin_border">
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemTimeSeg2"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="xx:xx-xx:xx"
+    		    android:textColor="@color/text_gray"
+    		    android:gravity="center" />
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemSeatLeft2"
+    		    android:paddingLeft="10dp"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="余 x 个空位"
+    		    android:gravity="center_vertical"
+    		    android:textColor="@color/text_gray" />
+    		<Button android:layout_height="match_parent"
+    		    android:id="@+id/listItemBookButton2"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="预约"
+    		    android:textColor="@color/white"
+    		    android:background="@drawable/deep_blue_button_with_round_corner" />
+    	</LinearLayout>  
+    	<LinearLayout android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	      	android:orientation="horizontal"
+	      	android:padding="5dp"
+	      	android:background="@drawable/line_list_item_bg_with_thin_border">
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemTimeSeg3"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="xx:xx-xx:xx"
+    		    android:textColor="@color/text_gray"
+    		    android:gravity="center" />
+    		<TextView android:layout_height="match_parent"
+    		    android:id="@+id/listItemSeatLeft3"
+    		    android:paddingLeft="10dp"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="余 x 个空位"
+    		    android:gravity="center_vertical"
+    		    android:textColor="@color/text_gray" />
+    		<Button android:layout_height="match_parent"
+    		    android:id="@+id/listItemBookButton3"
+    		    android:layout_width="0dip"
+    		    android:layout_weight="1"
+    		    android:text="预约"
+    		    android:textColor="@color/white"
+    		    android:background="@drawable/deep_blue_button_with_round_corner" />
+    	</LinearLayout>  	
+	</LinearLayout>
 </LinearLayout>

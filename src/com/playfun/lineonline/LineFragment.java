@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import com.playfun.lineonline.widget.LvAdapter;
 import com.playfun.lineonline.widget.MyListView;
 import com.playfun.lineonline.widget.MyListView.OnRefreshListener;
+import com.playfun.lineonline.widget.MyOnClickListener;
 
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -11,8 +12,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.EditText;
+import android.widget.LinearLayout;
  
 public class LineFragment extends Fragment {
 	
@@ -41,6 +46,13 @@ public class LineFragment extends Fragment {
 									    listItemView.getPaddingRight(),
 									    listItemView.getPaddingBottom());
 			}
+			
+			MyOnClickListener mOnClickListener = new MyOnClickListener(listItemView);
+			listItemView.findViewById(R.id.listItemArrow).setOnClickListener(mOnClickListener);
+			listItemView.findViewById(R.id.listItemBookButton1).setOnClickListener(mOnClickListener);
+			listItemView.findViewById(R.id.listItemBookButton2).setOnClickListener(mOnClickListener);
+			listItemView.findViewById(R.id.listItemBookButton3).setOnClickListener(mOnClickListener);
+			
 			mLineList.add(listItemView);
 		}
 		

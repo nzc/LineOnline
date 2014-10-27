@@ -34,13 +34,16 @@
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:prompt="@string/lineFragSpin1Prompt"
+                android:entries="@array/lineFragSpin1Item" />
 
             <Spinner
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
-                android:layout_weight="1">
-            </Spinner>
+                android:layout_weight="1"
+                android:prompt="@string/lineFragSpin2Prompt"
+                android:entries="@array/lineFragSpin2Item" />
         </LinearLayout>
     </LinearLayout>
     
