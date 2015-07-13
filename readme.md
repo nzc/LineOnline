@@ -1,4 +1,4 @@
-This is the Github Repo for LineOnline, which is just a small project for 
+This is the Github Repo for LineOnline, which is just a small project for the course assignment.
 
 LineOnline is the smart app which can take the best use of users' time when they are playing in an amusement park.
 
